@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "../presentation/home_page.dart";
+import "../presentation/pages/home_page.dart";
 
 class Tetrix extends StatelessWidget {
   const Tetrix({super.key});
@@ -14,7 +14,7 @@ class Tetrix extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomePage(),
     );
   }
 }
