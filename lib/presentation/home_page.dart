@@ -10,40 +10,33 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+          centerTitle: true,
+          backgroundColor: Color(0xFF1A1A2E),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              CircleAvatar(
+                backgroundColor: Color(0xFF2C2C3E),
+                child: Center(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.pause),
+                    color: Color(0xFFE0E0E0),
+                  ),
+                ),
+              ),
+              Text(
+                "TETRIX",
+                style: TextStyle(color: Color(0xFFE0E0E0)),
+              ),
+              SizedBox(width: 32, height: 40, child: Image(image: AssetImage('assets/images/Tetrix_logo.png')))
+            ],
+          )),
+      backgroundColor: Color(0xFF1A1A2E),
     );
   }
 }
