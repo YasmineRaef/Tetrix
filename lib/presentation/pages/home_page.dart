@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gap/flutter_gap.dart';
 
 import '../../models/game_board.dart';
 import '../buttons/left_button.dart';
@@ -44,22 +45,26 @@ class _HomePageState extends State<HomePage> {
             ],
           )),
       backgroundColor: Color(0xFF1A1A2E),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              GameBoard(),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [NextShape(), Score(), Level(), LinesCleared()],
-              )
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [LeftButton(), RotateButton(), RightButton()],
-          )
-        ],
+      body: Padding(
+        padding: EdgeInsets.all(5),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                GameBoard(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [NextShape(), Score(), Level(), LinesCleared()],
+                )
+              ],
+            ),
+            Gap(25),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [LeftButton(), RotateButton(), RightButton()],
+            )
+          ],
+        ),
       ),
     );
   }

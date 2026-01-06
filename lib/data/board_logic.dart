@@ -1,6 +1,12 @@
-const rows = 12;
-const columns = 10;
-List<List<int>> board = List.generate(rows, (_) => List.filled(columns, 0));
+class Game {
+  final int rows = 12;
+  final int cols = 10;
+  late List<List<int>> board;
+
+  Game() {
+    board = List.generate(rows, (_) => List.filled(cols, 0));
+  }
+}
 
 /* Visual shape of the 2-D matrix
 {
