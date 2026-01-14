@@ -15,8 +15,8 @@ class _GameBoardState extends State<GameBoard> {
   void initState() {
     super.initState();
     game = Game();
-    final testShape = shapes[TetrominoTypes.T];
-    final colorIndex = shapeColors[TetrominoTypes.T];
+    final testShape = shapes[TetrominoTypes.I];
+    final colorIndex = shapeColors[TetrominoTypes.I];
     int displayRow = 6;
     int displayCol = 4;
     for (var box in testShape!) {

@@ -1,5 +1,5 @@
 class Game {
-  final int rows = 12;
+  final int rows = 18;
   final int cols = 10;
   late List<List<int>> board;
 

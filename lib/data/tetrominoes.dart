@@ -65,5 +65,6 @@ final List<Color> blockColor = [
   Color(0xFF4CAF50), //4 For S
   Color(0xFFF44336), //5 For Z
   Color(0xFFFF9800), //6 For L
-  Color(0xFF2196F3) //7 For J
+  Color(0xFF2196F3), //7 For J
+  Colors.transparent //8 for preview
 ];

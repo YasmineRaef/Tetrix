@@ -52,9 +52,9 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 GameBoard(),
+                Gap(7),
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [NextShape(), Score(), Level(), LinesCleared()],
+                  children: [NextShape(), Gap(75), Score(), Gap(25), Level(), Gap(25), LinesCleared()],
                 )
               ],
             ),
