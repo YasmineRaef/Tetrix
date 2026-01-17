@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'tetrix_colors.dart';
+
 enum TetrominoTypes { I, O, T, S, Z, L, J }
 
 final Map<TetrominoTypes, List<List<int>>> shapes = {
@@ -58,13 +60,13 @@ final Map<TetrominoTypes, int> shapeColors = {
 };
 
 final List<Color> blockColor = [
-  Colors.black, // 0 -> Empty
-  Color(0xFF00BCD4), //1 For I
-  Color(0xFFFFEB3B), //2 For O
-  Color(0xFF9C27B0), //3 For T
-  Color(0xFF4CAF50), //4 For S
-  Color(0xFFF44336), //5 For Z
-  Color(0xFFFF9800), //6 For L
-  Color(0xFF2196F3), //7 For J
-  Colors.transparent //8 for preview
+  TetrixColors.emptyCell, // 0 -> Empty
+  TetrixColors.tetrominoI, //1 For I
+  TetrixColors.tetrominoO, //2 For O
+  TetrixColors.tetrominoT, //3 For T
+  TetrixColors.tetrominoS, //4 For S
+  TetrixColors.tetrominoZ, //5 For Z
+  TetrixColors.tetrominoL, //6 For L
+  TetrixColors.tetrominoJ, //7 For J
+  TetrixColors.transparent //8 for preview
 ];

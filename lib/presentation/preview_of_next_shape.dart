@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:tetrix/data/preview_logic.dart";
-import "package:tetrix/data/tetrominoes.dart";
+import "package:tetrix/presentation/resources/preview_logic.dart";
+import "package:tetrix/presentation/resources/tetrominoes.dart";
 
 class PreviewOfNextShape extends StatefulWidget {
   const PreviewOfNextShape({super.key});
