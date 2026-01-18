@@ -22,17 +22,18 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(5),
         child: Column(
+          spacing: 25,
           children: [
             Row(
+              spacing: 7,
               children: [
                 GameBoard(),
-                Gap(7),
                 Column(
-                  children: [NextShape(), Gap(75), Score(), Gap(25), Level(), Gap(25), LinesCleared()],
+                  spacing: 25,
+                  children: [NextShape(), Gap(25), Score(), Level(), LinesCleared()],
                 )
               ],
             ),
-            Gap(25),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [LeftButton(), RotateButton(), RightButton()],
@@ -46,6 +47,7 @@ class HomePage extends StatelessWidget {
 
 AppBar buildTetrixAppBar() {
   return AppBar(
+      toolbarHeight: 100,
       centerTitle: true,
       backgroundColor: TetrixColors.bgColor,
       title: Row(
