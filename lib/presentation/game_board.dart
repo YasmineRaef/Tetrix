@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:tetrix/data/board_logic.dart";
-import "package:tetrix/data/tetrominoes.dart";
+import "package:tetrix/presentation/resources/board_logic.dart";
+import "package:tetrix/presentation/resources/tetrominoes.dart";
 
 class GameBoard extends StatefulWidget {
   const GameBoard({super.key});
