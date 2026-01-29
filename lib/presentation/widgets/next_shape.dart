@@ -1,11 +1,13 @@
 import "package:flutter/material.dart";
 import "package:flutter_gap/flutter_gap.dart";
+import "package:tetrix/presentation/resources/tetrominoes.dart";
 
 import "../preview_of_next_shape.dart";
 import "../resources/tetrix_colors.dart";
 
 class NextShape extends StatefulWidget {
-  const NextShape({super.key});
+  final TetrominoTypes type;
+  const NextShape({super.key, required this.type});
 
   @override
   State<NextShape> createState() => _NextShapeState();
@@ -25,7 +27,7 @@ class _NextShapeState extends State<NextShape> {
           Gap(5),
           Text("Next", style: TextStyle(color: Colors.white)),
           Gap(5),
-          Padding(padding: EdgeInsets.all(5), child: PreviewOfNextShape()),
+          Padding(padding: EdgeInsets.all(5), child: PreviewOfNextShape(type: widget.type)),
         ],
       ),
     );

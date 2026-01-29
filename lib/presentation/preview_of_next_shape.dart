@@ -3,7 +3,8 @@ import "package:tetrix/presentation/resources/preview_logic.dart";
 import "package:tetrix/presentation/resources/tetrominoes.dart";
 
 class PreviewOfNextShape extends StatefulWidget {
-  const PreviewOfNextShape({super.key});
+  final TetrominoTypes type;
+  const PreviewOfNextShape({super.key, required this.type});
 
   @override
   State<PreviewOfNextShape> createState() => _PreviewOfNextShapeState();
@@ -15,12 +16,12 @@ class _PreviewOfNextShapeState extends State<PreviewOfNextShape> {
   void initState() {
     super.initState();
     preview = Preview();
-    final testShape = shapes[TetrominoTypes.I];
-    final colorIndex = shapeColors[TetrominoTypes.I];
+    final testShape = shapes[widget.type];
+    final color = blockColor[shapeColors[widget.type]!];
     for (var box in testShape!) {
       int r = box[0];
       int c = box[1];
-      preview.prev[r][c] = colorIndex!;
+      preview.prev[r][c] = color;
     }
   }
 
@@ -30,12 +31,12 @@ class _PreviewOfNextShapeState extends State<PreviewOfNextShape> {
       children: List.generate(preview.rows, (r) {
         return Row(
           children: List.generate(preview.columns, (c) {
-            final cell = preview.prev[r][c];
-            final cellColor = blockColor[cell];
+            final cellColor = preview.prev[r][c] ?? Colors.transparent;
             return Container(
               width: 15,
               height: 15,
-              decoration: BoxDecoration(color: cellColor, border: cellColor == Colors.transparent ? null : Border.all(color: Color(0xFF3A3A4A))),
+              decoration:
+                  BoxDecoration(color: cellColor, border: cellColor == Colors.transparent ? null : Border.all(color: const Color(0xFF3A3A4A))),
             );
           }),
         );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
+import 'package:tetrix/presentation/resources/board_logic.dart';
 import 'package:tetrix/presentation/resources/tetrix_colors.dart';
 
 import '../game_board.dart';
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
                 GameBoard(),
                 Column(
                   spacing: 25,
-                  children: [NextShape(), Gap(25), Score(), Level(), LinesCleared()],
+                  children: [NextShape(type: testingShape), Gap(25), Score(), Level(), LinesCleared()],
                 )
               ],
             ),

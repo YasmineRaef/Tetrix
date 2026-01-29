@@ -68,5 +68,5 @@ final List<Color> blockColor = [
   TetrixColors.tetrominoZ, //5 For Z
   TetrixColors.tetrominoL, //6 For L
   TetrixColors.tetrominoJ, //7 For J
-  TetrixColors.transparent //8 for preview
+  TetrixColors.transparent
 ];

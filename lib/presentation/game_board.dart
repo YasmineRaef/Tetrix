@@ -1,3 +1,5 @@
+import "dart:async";
+
 import "package:flutter/material.dart";
 import "package:tetrix/presentation/resources/board_logic.dart";
 import "package:tetrix/presentation/resources/tetrominoes.dart";
@@ -11,19 +13,18 @@ class GameBoard extends StatefulWidget {
 
 class _GameBoardState extends State<GameBoard> {
   late Game game;
+  Timer? timer;
+
   @override
   void initState() {
     super.initState();
     game = Game();
-    final testShape = shapes[TetrominoTypes.I];
-    final colorIndex = shapeColors[TetrominoTypes.I];
-    int displayRow = 6;
-    int displayCol = 4;
-    for (var box in testShape!) {
-      int r = displayRow + box[0];
-      int c = displayCol + box[1];
-      game.board[r][c] = colorIndex!;
-    }
+
+    timer = Timer.periodic(Duration(milliseconds: 400), (_) {
+      setState(() {
+        game.moveDown();
+      });
+    });
   }
 
   @override
@@ -33,7 +34,17 @@ class _GameBoardState extends State<GameBoard> {
         return Row(
           children: List.generate(game.cols, (c) {
             final cell = game.board[r][c];
-            final cellColor = blockColor[cell];
+            Color cellColor = blockColor[cell];
+
+            for (var pixel in game.position) {
+              var pixelRow = game.currentRow + pixel[0];
+              var pixelCol = game.currentCol + pixel[1];
+
+              if (pixelRow == r && pixelCol == c) {
+                cellColor = blockColor[shapeColors[game.currentShape]!];
+              }
+            }
+
             return Container(
               width: 30,
               height: 30,

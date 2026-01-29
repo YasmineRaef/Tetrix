@@ -1,10 +1,12 @@
+import 'package:flutter/material.dart';
+
 class Preview {
   final int columns = 4;
   final int rows = 2;
-  late List<List<int>> prev;
+  late List<List<Color?>> prev;
 
   Preview() {
-    prev = List.generate(rows, (_) => List.filled(columns, 8));
+    prev = List.generate(rows, (_) => List.filled(columns, Colors.transparent));
   }
 }
 
